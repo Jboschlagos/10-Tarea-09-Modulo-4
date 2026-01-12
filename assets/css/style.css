@@ -1,3 +1,5 @@
+/* ===== BASE ===== */
+
 body {
   font-family: Arial, sans-serif;
   background: #f2f2f2;
@@ -6,7 +8,10 @@ body {
 
 h1 {
   text-align: center;
+  margin-bottom: 20px;
 }
+
+/* ===== BOTONES ===== */
 
 .buttons {
   text-align: center;
@@ -16,7 +21,17 @@ h1 {
 button {
   padding: 10px 15px;
   cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  background: #444;
+  color: #fff;
 }
+
+button:hover {
+  background: #222;
+}
+
+/* ===== GRID DE TARJETAS ===== */
 
 #grid {
   display: grid;
@@ -31,10 +46,16 @@ button {
   border-radius: 6px;
   cursor: pointer;
   overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.03);
 }
 
 .card img {
   width: 100%;
+  display: block;
 }
 
 .card h3 {
@@ -42,15 +63,16 @@ button {
   font-size: 16px;
 }
 
-/* MODAL */
+/* ===== MODAL ===== */
 
 .modal {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.65);
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1000;
 }
 
 .hidden {
@@ -59,19 +81,36 @@ button {
 
 .modal-content {
   background: #fff;
-  max-width: 700px;
+  max-width: 600px;
   width: 90%;
-  padding: 20px;
+  padding: 16px;
   border-radius: 6px;
 }
 
+/* Banner ajustado */
 .modal-content img {
   width: 100%;
-  margin-bottom: 15px;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 12px;
 }
 
+/* Texto */
+.modal-content h2 {
+  margin: 0 0 6px;
+}
+
+.modal-content p {
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+/* Cerrar */
 #cerrar {
   float: right;
   font-size: 22px;
   cursor: pointer;
+  font-weight: bold;
 }
